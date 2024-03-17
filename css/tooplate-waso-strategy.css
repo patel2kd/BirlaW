@@ -14,11 +14,11 @@ Free Bootstrap 5 HTML Template
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #f9c10b;
-  --secondary-color:              #dc3545;
-  --section-bg-color:             #f5f5f5;
-  --dark-color:                   #000000;
-  --p-color:                      #717275;
+  --primary-color:                #33a9ed;
+  --secondary-color:              #0A1828;
+  --section-bg-color:             #0A1828;
+  --dark-color:                   #0A1828;
+  --p-color:                      #0A1828;
 
   --body-font-family:             'DM Sans', sans-serif;
 
@@ -133,7 +133,7 @@ a:hover {
 
 .section-hero ::selection,
 .bg-warning ::selection {
-  background: #f9d55c;
+  background: #33a9ed;
 }
 
 .section-padding {
