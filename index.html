@@ -432,14 +432,12 @@ Free Bootstrap 5 HTML Template
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
             <section class="contact" id="section_5">
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#33a9ed" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#33a9ed" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 
                 <div class="contact-container-wrap">
                     <div class="container">
@@ -537,9 +535,26 @@ Free Bootstrap 5 HTML Template
         <!-- JAVASCRIPT FILES -->
 
         <script>
+            function updatePageTitle() {
+        var sectionId = window.location.hash.substring(1); // Get the section ID from the URL hash
+
+        // Check if the section ID is section_4
+        if (sectionId === "section_4") {
+            // Update the title without the "section_4"
+            document.title = "Birla - Every Wash, A Fresh Start";
+        } else {
+            // Keep the original title
+            document.title = "Birla - Every Wash, A Fresh Start - " + sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+        }
+    }
+
+    // Call the function to update the page title when the page loads and when the hash changes
+    window.onload = updatePageTitle;
+    window.onhashchange = updatePageTitle;
+
             function sendInquiry() {
                 // WhatsApp number to send the message to
-                var phoneNumber = '+919879552477'; // Replace with your WhatsApp number
+                var phoneNumber = '+919978925339'; // Replace with your WhatsApp number
     
                 // Predefined inquiry message
                 var inquiryMessage = "Hello! I have an inquiry about your products.";
