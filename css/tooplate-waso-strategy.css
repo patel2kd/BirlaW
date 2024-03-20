@@ -560,6 +560,8 @@ strong {
 /*---------------------------------------
   PROJECTS              
 -----------------------------------------*/
+
+
 .projects-thumb {
   border-radius: 20px;
   position: relative;
@@ -574,7 +576,7 @@ strong {
 }
 
 .projects-thumb:hover {
-  background: var(--white-color);
+  background: var(--secondary-color);
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
 }
 
@@ -602,7 +604,7 @@ strong {
 }
 
 .projects-small-title {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   text-transform: uppercase;
 }
 
@@ -715,13 +717,22 @@ strong {
 -----------------------------------------*/
 .site-footer {
   background: var(--primary-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position:relative;
+  width: 100%;
 }
 
 .site-footer .copyright-text {
   color: var(--white-color);
   font-size: var(--copyright-text-font-size);
+}
+
+.footer-image {
+  position: absolute;
+  bottom: 20px; /* Adjust the distance from the bottom */
+  right: 30px; /* Adjust the distance from the right */
+  z-index: 9999; /* Ensure the image stays on top of other content */
 }
 
 
@@ -747,9 +758,9 @@ strong {
   display: inline-block;
   vertical-align: top;
   margin: 2px;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
 }
 
