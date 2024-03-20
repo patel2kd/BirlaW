@@ -771,78 +771,23 @@ strong {
 /*---------------------------------------
   RESPONSIVE STYLES               
 -----------------------------------------*/
-
-/* Small devices (phones, 480px and down) */
-@media screen and (max-width: 480px) {
-  h1 {
-    font-size: 38px;
-  }
-
-  h2 {
-    font-size: 32px;
-  }
-
-  h3 {
-    font-size: 28px;
-  }
-
-  h4 {
-    font-size: 24px;
-  }
-
-  h5 {
-    font-size: 20px;
-  }
-
-  .contact-icon {
-    font-size: 24px;
-  }
-
-  .site-header p {
-    font-size: 14px;
-  }
-
-  .carousel-control-next, 
-  .carousel-control-prev {
-    bottom: 20px;
-  }
-
-  .nav-tabs .nav-link {
-    margin-right: 0;
-    margin-left: 0;
-    padding: 15px;
-  }
-
-  .contact-info {
-    padding: 30px 25px;
-  }
-
-  .site-footer-wrap {
-    flex-direction: column;
-  }
-
-  .copyright-text {
-    padding-bottom: 10px;
+/*---------------------------------------
+  RESPONSIVE STYLES               
+-----------------------------------------*/
+@media screen and (min-width: 1600px) {
+  .projects-thumb-large {
+    min-height: 416px;
   }
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (min-width: 576px) and (max-width: 767px) {
-  /* Adjust background-size for hero images on smaller screens */
-  .section-hero {
-    background-size: contain !important;
-    background-position: center top;
-  }
-
-  /* Ensure the image in the footer fills its container */
-  .footer-image img {
-    width: 100%;
-    height: auto !important; /* Maintain aspect ratio */
+@media screen and (max-width: 1280px) {
+  .contact svg {
+    bottom: 0;
+    margin-bottom: 0;
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   h1 {
     font-size: 48px;
   }
@@ -924,27 +869,76 @@ strong {
   }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) and (max-width: 1279px) {
-  .contact svg {
-    bottom: 0;
-    margin-bottom: 0;
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  .contact-icon {
+    font-size: 24px;
+  }
+
+  .site-header p {
+    font-size: 14px;
+  }
+
+  .carousel-control-next, 
+  .carousel-control-prev {
+    bottom: 20px;
+  }
+
+  .nav-tabs .nav-link {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .contact-info {
+    padding: 30px 25px;
+  }
+
+  .site-footer-wrap {
+    flex-direction: column;
+  }
+
+  .copyright-text {
+    padding-bottom: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* Adjust background-size for hero images on smaller screens */
+  .section-hero {
+    background-size: contain !important;
+    background-position: center top;
+  }
+
+  /* Ensure the image in the footer fills its container */
+  .footer-image img {
+    width: 100%;
+    height: auto !important; /* Maintain aspect ratio */
   }
 }
 
-/* Extra large devices (large desktops, 1280px and up) */
-@media screen and (min-width: 1280px) and (max-width: 1599px) {
-  .projects-thumb-large {
-    min-height: 416px;
+@media screen and (max-width: 767px) {
+  .carousel-image {
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
   }
 }
-
-/* Extra extra large devices (larger desktops, 1600px and up) */
-@media screen and (min-width: 1600px) {
-  /* Add your styles for extra extra large screens here */
-}
-
-
-
-
-
