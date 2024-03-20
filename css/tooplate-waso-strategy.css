@@ -38,6 +38,7 @@ Free Bootstrap 5 HTML Template
 }
 
 body {
+  margin: 0;
   background: var(--white-color);
   font-family: var(--body-font-family); 
 }
@@ -918,10 +919,11 @@ strong {
     padding-bottom: 10px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 414px) {
   /* Adjust background-size for hero images on smaller screens */
   .section-hero {
-    background-size: cover !important;
+    background-size: contain !important;
+    background-position: center top;
   }
 
   /* Ensure the image in the footer fills its container */
