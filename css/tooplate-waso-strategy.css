@@ -379,7 +379,6 @@ strong {
 }
 
 .section-hero {
-  background-image: url('../images/jason-goodman-MUZFKa_mttU-unsplash.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -917,6 +916,18 @@ strong {
 
   .copyright-text {
     padding-bottom: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* Adjust background-size for hero images on smaller screens */
+  .section-hero {
+    background-size: cover;
+  }
+
+  /* Ensure the image in the footer fills its container */
+  .footer-image img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
   }
 }
 
