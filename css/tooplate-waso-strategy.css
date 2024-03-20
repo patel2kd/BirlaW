@@ -921,13 +921,13 @@ strong {
 @media screen and (max-width: 767px) {
   /* Adjust background-size for hero images on smaller screens */
   .section-hero {
-    background-size: cover;
+    background-size: cover !important;
   }
 
   /* Ensure the image in the footer fills its container */
   .footer-image img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto !important; /* Maintain aspect ratio */
   }
 }
 
