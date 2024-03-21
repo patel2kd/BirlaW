@@ -535,23 +535,6 @@ Free Bootstrap 5 HTML Template
         <!-- JAVASCRIPT FILES -->
 
         <script>
-            function updatePageTitle() {
-        var sectionId = window.location.hash.substring(1); // Get the section ID from the URL hash
-
-        // Check if the section ID is section_4
-        if (sectionId === "section_4") {
-            // Update the title without the "section_4"
-            document.title = "Birla - Every Wash, A Fresh Start";
-        } else {
-            // Keep the original title
-            document.title = "Birla - Every Wash, A Fresh Start - " + sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
-        }
-    }
-
-    // Call the function to update the page title when the page loads and when the hash changes
-    window.onload = updatePageTitle;
-    window.onhashchange = updatePageTitle;
-
             function sendInquiry() {
                 // WhatsApp number to send the message to
                 var phoneNumber = '+919978925339'; // Replace with your WhatsApp number
