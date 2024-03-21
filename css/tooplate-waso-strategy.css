@@ -936,3 +936,9 @@ strong {
     width: 100%;
 }
 }
+
+@media screen and (max-width: 576px) { /* Adjust the max-width as needed */
+  .social-icon {
+      margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+}
