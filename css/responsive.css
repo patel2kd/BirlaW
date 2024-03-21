@@ -1,0 +1,273 @@
+/*---------------------------------------
+  RESPONSIVE STYLES    original           
+-----------------------------------------*/
+@media screen and (min-width: 1600px) {
+    .projects-thumb-large {
+      min-height: 416px;
+    }
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .contact svg {
+      bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    h1 {
+      font-size: 48px;
+    }
+  
+    h2 {
+      font-size: 36px;
+    }
+  
+    h3 {
+      font-size: 32px;
+    }
+  
+    h4 {
+      font-size: 28px;
+    }
+  
+    h5 {
+      font-size: 20px;
+    }
+  
+    h6 {
+      font-size: 18px;
+    }
+  
+    .section-padding {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  
+    .custom-btn {
+      font-size: var(--copyright-text-font-size);
+      padding: 8px 16px;
+    }
+  
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding-left: 0;
+    }
+  
+    .navbar-nav .nav-link {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  
+    .site-header .social-icon {
+      text-align: left;
+      margin-top: 10px;
+    }
+  
+    .carousel-caption {
+      width: 100%;
+    }
+  
+    .about-thumb {
+      padding: 30px;
+    }
+  
+    .about-image {
+      height: auto;
+      margin-bottom: 24px;
+    }
+  
+    .contact-container-wrap {
+      padding-bottom: 50px;
+    }
+  
+    .contact-form {
+      margin-right: 0;
+      margin-top: 80px;
+      margin-bottom: 50px;
+    }
+  
+    .contact-thumb {
+      bottom: 0;
+      margin-bottom: 0;
+    }
+  
+    .site-footer {
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 38px;
+    }
+  
+    h2 {
+      font-size: 32px;
+    }
+  
+    h3 {
+      font-size: 28px;
+    }
+  
+    h4 {
+      font-size: 24px;
+    }
+  
+    h5 {
+      font-size: 20px;
+    }
+  
+    .contact-icon {
+      font-size: 24px;
+    }
+  
+    .site-header p {
+      font-size: 14px;
+    }
+  
+    .carousel-control-next, 
+    .carousel-control-prev {
+      bottom: 20px;
+    }
+  
+    .nav-tabs .nav-link {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 15px;
+    }
+  
+    .contact-info {
+      padding: 30px 25px;
+    }
+  
+    .site-footer-wrap {
+      flex-direction: column;
+    }
+  
+    .copyright-text {
+      padding-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    /* Adjust background-size for hero images on smaller screens */
+    .section-hero {
+      background-size: contain !important;
+      background-position: center top;
+    }
+  
+    /* Ensure the image in the footer fills its container */
+    .footer-image img {
+      width: 10% !important;
+      height: auto !important; /* Maintain aspect ratio */
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .carousel-image {
+      padding-right: 0;
+      padding-left: 0;
+      width: 100%;
+  }
+  
+  /*---------------------------------------
+  RESPONSIVE STYLES               
+-----------------------------------------*/
+
+@media screen and (max-width: 767px) {
+    /* Adjust padding for navbar links */
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  
+    /* Adjust hero section background size */
+    .section-hero {
+      background-size: contain !important;
+      background-position: center top;
+    }
+  
+    /* Ensure footer image fills its container */
+    .footer-image img {
+      width: 100% !important;
+      height: auto !important; /* Maintain aspect ratio */
+    }
+  
+    /* Adjust carousel image padding and size */
+    .carousel-image {
+      padding-right: 0;
+      padding-left: 0;
+      width: 100%;
+      image-rendering: auto;
+      background-size: contain !important;
+      background-position: center top;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Adjust heading font sizes */
+    h1 {
+      font-size: 38px;
+    }
+  
+    h2 {
+      font-size: 32px;
+    }
+  
+    h3 {
+      font-size: 28px;
+    }
+  
+    h4 {
+      font-size: 24px;
+    }
+  
+    h5 {
+      font-size: 20px;
+    }
+  
+    /* Adjust contact icon size */
+    .contact-icon {
+      font-size: 24px;
+    }
+  
+    /* Adjust paragraph font size in the site header */
+    .site-header p {
+      font-size: 14px;
+    }
+  
+    /* Adjust carousel control position */
+    .carousel-control-next, 
+    .carousel-control-prev {
+      bottom: 20px;
+    }
+  
+    /* Adjust padding for nav-tabs */
+    .nav-tabs .nav-link {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 15px;
+    }
+  
+    /* Adjust padding for contact info */
+    .contact-info {
+      padding: 30px 25px;
+    }
+  
+    /* Ensure footer text wraps properly on smaller screens */
+    .site-footer-wrap {
+      flex-direction: column;
+    }
+  
+    /* Adjust padding for copyright text */
+    .copyright-text {
+      padding-bottom: 10px;
+    }
+  }
+  
+  @media screen and (min-width: 1600px) {
+    /* Adjust minimum height for large project thumbnails */
+    .projects-thumb-large {
+      min-height: 416px;
+    }
+  }
+}
