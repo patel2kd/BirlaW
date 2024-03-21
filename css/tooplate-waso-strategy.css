@@ -728,7 +728,7 @@ strong {
 .site-footer .footer-image{
   position: relative;
   bottom:5px; /* Adjust the distance from the bottom */
-  left: 25px; /* Adjust the distance from the right */
+  left: 50px; /* Adjust the distance from the left */
   z-index: 9999; /* Ensure the image stays on top of other content */
 }
 
