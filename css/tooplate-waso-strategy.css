@@ -930,7 +930,7 @@ strong {
 
   /* Ensure the image in the footer fills its container */
   .footer-image img {
-    width: 100%;
+    width: 10% !important;
     height: auto !important; /* Maintain aspect ratio */
   }
 }
@@ -940,5 +940,8 @@ strong {
     padding-right: 0;
     padding-left: 0;
     width: 100%;
+    image-rendering: auto;
+    background-size: contain !important;
+    background-position: center top;
   }
 }
