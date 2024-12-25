@@ -265,7 +265,7 @@ strong {
 
 .navbar-nav .nav-link {
   color: var(--p-color);
-  font-size: var(--menu-font-size);
+  font-size: 18px;
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   padding-top: 15px;
