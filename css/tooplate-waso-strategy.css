@@ -509,7 +509,15 @@ strong {
   padding:40px;
 }
 
-
+.grow-with-us {
+  flex: 1; /* Takes up 1 part of the container width */
+  padding: 20px;
+  background-color: #111111; /* Matches your "Join us" section background */
+  color: #ffffff; /* Makes text readable */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centers text inside the section */
+}
 /*---------------------------------------
   SERVICES              
 -----------------------------------------
