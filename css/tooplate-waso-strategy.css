@@ -633,6 +633,78 @@ strong {
   padding: 7.5px 15px;
 }
 
+/*---------------------------------------
+  PROJECTS-2
+-----------------------------------------*/
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Product Grid Styles */
+.product-container {
+  padding: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 150px; /* Set a fixed height for uniform size */
+  object-fit: contain; /* Ensures the entire image fits without cropping */
+  border-radius: 8px;
+  background-color: #fff; /* Optional: Add a background color for padding */
+  padding: 5px; /* Optional: Add padding for better spacing */
+}
+
+.product-card h3 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Button Styles */
+.action-button {
+  margin-top: auto; /* Push the button to the bottom */
+  padding: 10px 20px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background: #0056b3;
+}
 
 /*---------------------------------------
   CONTACT INFO               
