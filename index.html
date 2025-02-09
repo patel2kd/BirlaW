@@ -193,12 +193,12 @@
                   <div class="product-card" data-product="Scrub-X">
                     <img src="images/slide/Scrubx.jpg" alt="Scrub-X">
                     <h3>Scrub-X</h3>
-                    <button class="action-button">view details</button>
+                    <button class="action-button" onclick="openLightbox('Scrub-X')">view details</button>
                   </div>
                   <div class="product-card" data-product="Birla Fresh">
                     <img src="images/projects/TC.jpg" alt="Birla Fresh">
                     <h3>Birla Fresh</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button"onclick="openLightbox('Birla Fresh')">view details</button>
                   </div>
                   <div class="product-card" data-product="Birla Power Clean">
                     <img src="images/projects/PowerClean.jpg" alt="Birla Power Clean">
@@ -366,7 +366,7 @@
           });
           </script> -->
 
-        <script>
+        <!-- <script>
             function sendLightboxInquiry() {
     const productName = "Spot-X"; // Since the lightbox is for Spot-X
     const quantity = document.getElementById("quantity").value; // Get selected quantity
@@ -398,7 +398,50 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-        </script>
+        </script>-->
+        <script>
+        function openLightbox(product) {
+            // Get the lightbox element for the selected product and display it
+            document.getElementById('lightbox-' + product).style.display = 'flex';
+        }
+        
+        function closeLightbox(product) {
+            // Get the lightbox element for the selected product and hide it
+            document.getElementById('lightbox-' + product).style.display = 'none';
+        }
+        
+        function sendLightboxInquiry(product) {
+            const quantity = document.getElementById("quantity-" + product).value; // Get selected quantity for that product
+        
+            // Check if the quantity is valid
+            if (!quantity || quantity <= 0) {
+                alert("Please select a valid quantity.");
+                return;
+            }
+        
+            // Construct the WhatsApp message
+            const message = `Hello, I am interested in purchasing ${quantity} units of ${product}. Can you provide more details?`;
+        
+            // WhatsApp URL
+            const whatsappBaseURL = "https://wa.me/";
+            const phoneNumber = "919998883217"; // Your WhatsApp number
+            const whatsappURL = `${whatsappBaseURL}${phoneNumber}?text=${encodeURIComponent(message)}`;
+        
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, "_blank");
+        }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            const productCards = document.querySelectorAll(".product-card .action-button");
+            productCards.forEach(button => {
+                const productName = button.closest(".product-card").getAttribute("data-product");
+                button.addEventListener("click", function () {
+                    openLightbox(productName); // Open the lightbox for the clicked product
+                });
+            });
+        });</script>
+        
+
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
@@ -408,9 +451,9 @@ document.addEventListener("DOMContentLoaded", function () {
         <script src="js/custom.js"></script>
 
         <!-- Lightbox for Products -->
-<div id="lightbox" class="lightbox">
+<div id="lightbox-Spot-X" class="lightbox">
     <div class="lightbox-content">
-        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="close-btn" onclick="closeLightbox('Spot-X')">&times;</span>
         <img src="images/slide/Spotx.jpg" alt="Spot-X" class="lightbox-img">
         <h3>Spot-X</h3>
         <p>Size: 500g</p>
@@ -418,6 +461,30 @@ document.addEventListener("DOMContentLoaded", function () {
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" min="1" value="1">
         <button class="action-button" onclick="sendLightboxInquiry()">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Scrub-X" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Scrub-X')">&times;</span>
+        <img src="images/slide/Scrubx.jpg" alt="Scrub-X" class="lightbox-img">
+        <h3>Scrub-X</h3>
+        <p>Size: 550g</p>
+        <p>Price: ₹100</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Scrub-X" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Scrub-X')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Birla Fresh" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Birla Fresh')">&times;</span>
+        <img src="images/projects/PowerClean.jpg" alt="Birla Fresh" class="lightbox-img">
+        <h3>Birla Fresh</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Brila Fresh" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Birla Fresh')">Send Inquiry</button>
     </div>
 </div>
 
@@ -456,14 +523,14 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 </style>
 
-<script>
+<!--<script>
 function openLightbox() {
     document.getElementById('lightbox').style.display = 'flex';
 }
 function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
-</script>
+</script>-->
 
 
     </body>
