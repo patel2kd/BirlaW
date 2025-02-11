@@ -188,7 +188,7 @@
                   <div class="product-card" data-product="Spot-X">
                     <img src="images/slide/Spotx.jpg" alt="Spot-X">
                     <h3>Spot-X</h3>
-                    <button class="action-button" onclick="openLightbox()">view details</button>
+                    <button class="action-button" onclick="openLightbox('Spot-X')">view details</button>
                   </div>
                   <div class="product-card" data-product="Scrub-X">
                     <img src="images/slide/Scrubx.jpg" alt="Scrub-X">
@@ -198,57 +198,57 @@
                   <div class="product-card" data-product="Birla Fresh">
                     <img src="images/projects/TC.jpg" alt="Birla Fresh">
                     <h3>Birla Fresh</h3>
-                    <button class="action-button"onclick="openLightbox('Birla Fresh')">view details</button>
+                    <button class="action-button" onclick="openLightbox('Birla Fresh')">view details</button>
                   </div>
                   <div class="product-card" data-product="Birla Power Clean">
                     <img src="images/projects/PowerClean.jpg" alt="Birla Power Clean">
                     <h3>Birla Power Clean</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('Power Clean')">view details</button>
                   </div>
                   <div class="product-card" data-product="Birla white">
                     <img src="images/projects/Powder.jpg" alt="Birla white">
                     <h3>Birla White</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('Birla white')">view details</button>
                   </div>
                   <div class="product-card" data-product="Birla jumbo bar">
                     <img src="images/projects/Jumbo.jpg" alt="Birla jumbo bar">
                     <h3>Birla Jumbo Bar</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('Birla jumbo bar')">view details</button>
                   </div>
                   <div class="product-card" data-product="Advance Detergent">
                     <img src="images/projects/AdvanceDetergent.jpg" alt="Advance Detergent">
                     <h3>Advance Detergent</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('Advance Detergent')">view details</button>
                   </div>
                   <div class="product-card" data-product="Super Blue">
                     <img src="images/projects/Blue.jpg" alt="Super Blue">
                     <h3>Super Blue</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('Super Blue')">view details</button>
                   </div>
                   <div class="product-card" data-product="UltraWhite">
                     <img src="images/projects/UltraWhite.jpg" alt="UltraWhite">
                     <h3>Ultra White</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('UltraWhite')">view details</button>
                   </div>
                   <div class="product-card" data-product="Birla Shakti">
                     <img src="images/projects/BirlaShakti.jpg" alt="Birla Shakti">
                     <h3>Birla Shakti</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('Birla Shakti')">view details</button>
                   </div>
                   <div class="product-card" data-product="Bartan Bar">
                     <img src="images/projects/Bartan.jpg" alt="Bartan Bar">
                     <h3>Bartan Bar</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('Bartan Bar')">view details</button>
                   </div>
                   <div class="product-card" data-product="White Detergent">
                     <img src="images/projects/WhiteDetergent.jpg" alt="White Detergent">
                     <h3>White Detergent</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('White Detergent')">view details</button>
                   </div>
                   <div class="product-card" data-product="Birla Forever">
                     <img src="images/projects/Forever.jpg" alt="Birla Forever">
                     <h3>Birla Forever</h3>
-                    <button class="action-button">Send Inquiry</button>
+                    <button class="action-button" onclick="openLightbox('Birla Forever')">view details</button>
                   </div>
                 </div>
               </div></section>
@@ -459,8 +459,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>Size: 500g</p>
         <p>Price: ₹50</p>
         <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" min="1" value="1">
-        <button class="action-button" onclick="sendLightboxInquiry()">Send Inquiry</button>
+        <input type="number" id="quantity-Spot-X" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry(('Spot-X'))">Send Inquiry</button>
     </div>
 </div>
 <div id="lightbox-Scrub-X" class="lightbox">
@@ -478,7 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="lightbox-Birla Fresh" class="lightbox">
     <div class="lightbox-content">
         <span class="close-btn" onclick="closeLightbox('Birla Fresh')">&times;</span>
-        <img src="images/projects/PowerClean.jpg" alt="Birla Fresh" class="lightbox-img">
+        <img src="images/projects/TC.jpg" alt="Birla Fresh" class="lightbox-img">
         <h3>Birla Fresh</h3>
         <p>Size: 1 Kg</p>
         <p>Price: ₹500</p>
@@ -487,9 +487,129 @@ document.addEventListener("DOMContentLoaded", function () {
         <button class="action-button" onclick="sendLightboxInquiry('Birla Fresh')">Send Inquiry</button>
     </div>
 </div>
+<div id="lightbox-Power Clean" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Power Clean')">&times;</span>
+        <img src="images/projects/PowerClean.jpg" alt="Power Clean" class="lightbox-img">
+        <h3>Power Clean</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Power Clean" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Power Clean')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Birla white" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Birla white')">&times;</span>
+        <img src="images/projects/Powder.jpg" alt="Birla white" class="lightbox-img">
+        <h3>Birla white</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Brila Fresh" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Birla white')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Birla jumbo bar" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Birla jumbo bar')">&times;</span>
+        <img src="images/projects/Jumbo.jpg" alt="Birla jumbo bar" class="lightbox-img">
+        <h3>Birla jumbo bar</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Birla jumbo bar" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Birla jumbo bar')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Advance Detergent" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Advance Detergent')">&times;</span>
+        <img src="images/projects/AdvanceDetergent.jpg" alt="Advance Detergent" class="lightbox-img">
+        <h3>Advance Detergent</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Advance Detergent" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Advance Detergent')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Super Blue" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Super Blue')">&times;</span>
+        <img src="images/projects/Blue.jpg" alt="Super Blue" class="lightbox-img">
+        <h3>Super Blue</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Super Blue" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Super Blue')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-UltraWhite" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('UltraWhite')">&times;</span>
+        <img src="images/projects/UltraWhite.jpg" alt="UltraWhite" class="lightbox-img">
+        <h3>Ultra White</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-UltraWhite" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('UltraWhite')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Birla Shakti" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Birla Shakti')">&times;</span>
+        <img src="images/projects/BirlaShakti.jpg" alt="Birla Shakti" class="lightbox-img">
+        <h3>Birla Shakti</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Birla Shakti" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Birla Shakti')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Bartan Bar" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Bartan Bar')">&times;</span>
+        <img src="images/projects/Bartan.jpg" alt="Bartan Bar" class="lightbox-img">
+        <h3>Bartan Bar</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Bartan Bar" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Bartan Bar')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-White Detergent" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('White Detergent')">&times;</span>
+        <img src="images/projects/WhiteDetergent.jpg" alt="White Detergent" class="lightbox-img">
+        <h3>White Detergent</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-White Detergent" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('White Detergent')">Send Inquiry</button>
+    </div>
+</div>
+<div id="lightbox-Birla Forever" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeLightbox('Birla Forever')">&times;</span>
+        <img src="images/projects/Forever.jpg" alt="Birla Forever" class="lightbox-img">
+        <h3>Birla Forever</h3>
+        <p>Size: 1 Kg</p>
+        <p>Price: ₹500</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity-Birla Forever" name="quantity" min="1" value="1">
+        <button class="action-button" onclick="sendLightboxInquiry('Birla Forever')">Send Inquiry</button>
+    </div>
+
 
 <style>
-/* Lightbox Styling */
+/* Lightbox Styling for Products */
 .lightbox {
     display: none;
     position: fixed;
@@ -502,36 +622,47 @@ document.addEventListener("DOMContentLoaded", function () {
     justify-content: center;
     align-items: center;
 }
+
 .lightbox-content {
     background: white;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
-    width: 300px;
+    width: 320px; /* Keep it compact */
+    position: relative; /* Ensures close button stays inside */
 }
+
 .lightbox-img {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
+
 .close-btn {
-    position:static;
-    top: 15px;
-    right: 100px;
-    font-size: 30px;
-    cursor:pointer;
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    font-size: 44px;
+    cursor: pointer;
+}
+
+.quantity-container {
+    margin-bottom: 15px; /* Adds space between quantity input and Send Inquiry button */
+}
+
+.action-button {
+    margin-top: 10px; /* Adds space above Send Inquiry button */
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
 }
 </style>
-
-<!--<script>
-function openLightbox() {
-    document.getElementById('lightbox').style.display = 'flex';
-}
-function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-}
-</script>-->
-
-
-    </body>
+</body>
 </html>
