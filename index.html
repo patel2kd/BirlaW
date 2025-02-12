@@ -321,47 +321,69 @@
             </div>
         </footer>
 
-        <script>
-        function openLightbox(product) {
-            // Get the lightbox element for the selected product and display it
-            document.getElementById('lightbox-' + product).style.display = 'flex';
-        }
-        
-        function closeLightbox(product) {
-            // Get the lightbox element for the selected product and hide it
-            document.getElementById('lightbox-' + product).style.display = 'none';
-        }
-        
-        function sendLightboxInquiry(product) {
-            const quantity = document.getElementById("quantity-" + product).value; // Get selected quantity for that product
-        
-            // Check if the quantity is valid
-            if (!quantity || quantity <= 0) {
-                alert("Please select a valid quantity.");
-                return;
+        <Script>// Function to open the lightbox
+            function openLightbox(product) {
+                const lightbox = document.getElementById('lightbox-' + product);
+                if (lightbox) {
+                    lightbox.style.display = 'flex';
+                }
             }
-        
-            // Construct the WhatsApp message
-            const message = `W - Hello, I am interested in purchasing ${quantity} units of ${product}. Can you provide more details?`;
-        
-            // WhatsApp URL
-            const whatsappBaseURL = "https://wa.me/";
-            const phoneNumber = "919879552477"; // Your WhatsApp number
-            const whatsappURL = `${whatsappBaseURL}${phoneNumber}?text=${encodeURIComponent(message)}`;
-        
-            // Open WhatsApp in a new tab
-            window.open(whatsappURL, "_blank");
-        }
-        
-        document.addEventListener("DOMContentLoaded", function () {
-            const productCards = document.querySelectorAll(".product-card .action-button");
-            productCards.forEach(button => {
-                const productName = button.closest(".product-card").getAttribute("data-product");
-                button.addEventListener("click", function () {
-                    openLightbox(productName); // Open the lightbox for the clicked product
+            
+            // Function to close the lightbox
+            function closeLightbox(product) {
+                const lightbox = document.getElementById('lightbox-' + product);
+                if (lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            }
+            
+            // Function to send the inquiry via WhatsApp
+            function sendLightboxInquiry(product) {
+                const quantityInput = document.getElementById("quantity-" + product);
+                const sizeSelect = document.getElementById("size-" + product); // Removed unnecessary check
+            
+                const quantity = quantityInput ? quantityInput.value : 1; // Default to 1 if not found
+                const size = sizeSelect ? sizeSelect.value : "Default Size"; // Fallback in case of error
+            
+                if (!quantity || quantity <= 0) {
+                    alert("Please select a valid quantity.");
+                    return;
+                }
+            
+                const message = `Hello Birla Detergent, I am interested in purchasing ${quantity} units of ${product} (Size: ${size}). Can you provide more details?`;
+                const whatsappURL = `https://wa.me/919879552477?text=${encodeURIComponent(message)}`;
+            
+                window.open(whatsappURL, "_blank");
+            }
+            
+            // Automatically attach event listeners after page loads
+            document.addEventListener("DOMContentLoaded", function () {
+                // Attach event listeners to action buttons inside lightboxes
+                document.querySelectorAll(".lightbox .action-button").forEach(button => {
+                    button.addEventListener("click", function () {
+                        const product = this.closest(".lightbox").id.replace("lightbox-", "");
+                        sendLightboxInquiry(product);
+                    });
                 });
-            });
-        });</script>
+            
+                // Attach event listeners to close buttons
+                document.querySelectorAll(".close-btn").forEach(button => {
+                    button.addEventListener("click", function () {
+                        const product = this.closest(".lightbox").id.replace("lightbox-", "");
+                        closeLightbox(product);
+                    });
+                });
+            
+                // Attach event listeners to product action buttons for opening the lightbox
+                document.querySelectorAll(".product-card .action-button").forEach(button => {
+                    const productName = button.closest(".product-card").getAttribute("data-product");
+                    button.addEventListener("click", function () {
+                        openLightbox(productName);
+                    });
+                });
+            });            
+            </Script>
+        
         
 
         <script src="js/jquery.min.js"></script>
@@ -378,8 +400,12 @@
         <span class="close-btn" onclick="closeLightbox('Spot-X')">&times;</span>
         <img src="images/slide/Spotx.jpg" alt="Spot-X" class="lightbox-img">
         <h3>Spot-X</h3>
-        <p>Size and Price:</p>
-        <p>50 ml - ₹10<br>1 L - ₹175<br>5 L - ₹750</p>
+        <label for="size-Spot-X">Select Size:</label>
+        <select id="size-Spot-X" name="size">
+            <option value="50ml">50 ml - ₹10</option>
+            <option value="1L">1 L - ₹175</option>
+            <option value="5L">5 L - ₹750</option>
+        </select><br><br>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Spot-X" name="quantity" min="1" value="1">
         <button class="action-button" onclick="sendLightboxInquiry(('Spot-X'))">Send Inquiry</button>
@@ -390,8 +416,11 @@
         <span class="close-btn" onclick="closeLightbox('Scrub-X')">&times;</span>
         <img src="images/slide/Scrubx.jpg" alt="Scrub-X" class="lightbox-img">
         <h3>Scrub-X</h3>
-        <p>Size and Price:</p>
-        <p>1 L - ₹120<br>5 L - ₹500</p>
+        <label for="size-Scrub-X">Select Size:</label>
+        <select id="size-Scrub-X" name="size">
+            <option value="1L">1 L - ₹120</option>
+            <option value="5L">5 L - ₹500</option>
+        </select><br><br>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Scrub-X" name="quantity" min="1" value="1">
         <button class="action-button" onclick="sendLightboxInquiry('Scrub-X')">Send Inquiry</button>
@@ -402,7 +431,7 @@
         <span class="close-btn" onclick="closeLightbox('Birla Fresh')">&times;</span>
         <img src="images/projects/TC.jpg" alt="Birla Fresh" class="lightbox-img">
         <h3>Birla Fresh</h3>
-        <p>Size and Price:</p>
+        <p>Size:</p>
         <p>500 ml - ₹80</p>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Brila Fresh" name="quantity" min="1" value="1">
@@ -414,7 +443,7 @@
         <span class="close-btn" onclick="closeLightbox('Power Clean')">&times;</span>
         <img src="images/projects/PowerClean.jpg" alt="Power Clean" class="lightbox-img">
         <h3>Power Clean</h3>
-        <p>Size and Price:</p>
+        <p>Size:</p>
         <p>500g - ₹40</p>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Power Clean" name="quantity" min="1" value="1">
@@ -426,8 +455,17 @@
         <span class="close-btn" onclick="closeLightbox('Birla white')">&times;</span>
         <img src="images/projects/Powder.jpg" alt="Birla white" class="lightbox-img">
         <h3>Birla white</h3>
-        <p>Size and Price:</p>
-        <p>50 g - ₹5 , 100 g - ₹10<br>400 g - ₹30 , 500 g - ₹35<br>1 kg - ₹70 , 2 kg - ₹140<br>3 kg - ₹200 , 5 kg - ₹350</p>
+        <label for="size-Birla white">Select Size:</label>
+        <select id="size-Birla white" name="size">
+            <option value="50g">50 g - ₹5</option>
+            <option value="100g">100 g - ₹10</option>
+            <option value="400g">400 g - ₹30</option>
+            <option value="500g">500 g - ₹35</option>
+            <option value="1kg">1 kg - ₹70</option>
+            <option value="2kg">2 kg - ₹140</option>
+            <option value="3kg">3 kg - ₹200</option>
+            <option value="5kg">5 kg - ₹350</option>
+        </select><br><br>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Brila Fresh" name="quantity" min="1" value="1">
         <button class="action-button" onclick="sendLightboxInquiry('Birla white')">Send Inquiry</button>
@@ -438,8 +476,11 @@
         <span class="close-btn" onclick="closeLightbox('Birla jumbo bar')">&times;</span>
         <img src="images/projects/Jumbo.jpg" alt="Birla jumbo bar" class="lightbox-img">
         <h3>Birla jumbo bar</h3>
-        <p>Size and Price:</p>
-        <p>100 g - ₹5<br>200 g - ₹10</p>
+        <label for="size-Birla jumbo bar">Select Size:</label>
+        <select id="size-Birla jumbo bar" name="size">
+            <option value="100g">100 g - ₹5</option>
+            <option value="200g">200 g - ₹10</option>
+        </select><br><br>      
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Birla jumbo bar" name="quantity" min="1" value="1">
         <button class="action-button" onclick="sendLightboxInquiry('Birla jumbo bar')">Send Inquiry</button>
@@ -450,7 +491,7 @@
         <span class="close-btn" onclick="closeLightbox('Advance Detergent')">&times;</span>
         <img src="images/projects/AdvanceDetergent.jpg" alt="Advance Detergent" class="lightbox-img">
         <h3>Advance Detergent</h3>
-        <p>Size and Price:</p>
+        <p>Size:</p>
         <p>175 g - ₹100</p>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Advance Detergent" name="quantity" min="1" value="1">
@@ -462,8 +503,11 @@
         <span class="close-btn" onclick="closeLightbox('Super Blue')">&times;</span>
         <img src="images/projects/Blue.jpg" alt="Super Blue" class="lightbox-img">
         <h3>Super Blue</h3>
-        <p>Size and Price:</p>
-        <p>110 g - ₹5<br>225 g - ₹10</p>
+        <label for="size-Super Blue">Select Size:</label>
+        <select id="size-Super Blue" name="size">
+            <option value="110g">110 g - ₹5</option>
+            <option value="225g">225 g - ₹10</option>
+        </select><br><br>       
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Super Blue" name="quantity" min="1" value="1">
         <button class="action-button" onclick="sendLightboxInquiry('Super Blue')">Send Inquiry</button>
@@ -474,7 +518,7 @@
         <span class="close-btn" onclick="closeLightbox('UltraWhite')">&times;</span>
         <img src="images/projects/UltraWhite.jpg" alt="UltraWhite" class="lightbox-img">
         <h3>Ultra White</h3>
-        <p>Size and Price:</p>
+        <p>Size:</p>
         <p>190 g - ₹10</p>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-UltraWhite" name="quantity" min="1" value="1">
@@ -486,8 +530,11 @@
         <span class="close-btn" onclick="closeLightbox('Birla Shakti')">&times;</span>
         <img src="images/projects/BirlaShakti.jpg" alt="Birla Shakti" class="lightbox-img">
         <h3>Birla Shakti</h3>
-        <p>Size and Price:</p>
-        <p>140 g - ₹6<br>290 g - ₹10</p>
+        <label for="size-Birla Shakti">Select Size:</label>
+        <select id="size-Birla Shakti" name="size">
+            <option value="140g">140 g - ₹6</option>
+            <option value="290g">290 g - ₹10</option>
+        </select><br><br>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Birla Shakti" name="quantity" min="1" value="1">
         <button class="action-button" onclick="sendLightboxInquiry('Birla Shakti')">Send Inquiry</button>
@@ -498,7 +545,7 @@
         <span class="close-btn" onclick="closeLightbox('Bartan Bar')">&times;</span>
         <img src="images/projects/Bartan.jpg" alt="Bartan Bar" class="lightbox-img">
         <h3>Bartan Bar</h3>
-        <p>Size and Price:</p>
+        <p>Size:</p>
         <p>200 g - ₹10</p>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Bartan Bar" name="quantity" min="1" value="1">
@@ -510,7 +557,7 @@
         <span class="close-btn" onclick="closeLightbox('White Detergent')">&times;</span>
         <img src="images/projects/WhiteDetergent.jpg" alt="White Detergent" class="lightbox-img">
         <h3>White Detergent</h3>
-        <p>Size and Price:</p>
+        <p>Size:</p>
         <p>120 g - ₹60</p>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-White Detergent" name="quantity" min="1" value="1">
@@ -522,7 +569,7 @@
         <span class="close-btn" onclick="closeLightbox('Birla Forever')">&times;</span>
         <img src="images/projects/Forever.jpg" alt="Birla Forever" class="lightbox-img">
         <h3>Birla Forever</h3>
-        <p>Size and Price:</p>
+        <p>Size:</p>
         <p>225 g - ₹120</p>
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity-Birla Forever" name="quantity" min="1" value="1">
@@ -569,11 +616,11 @@
 }
 
 .quantity-container {
-    margin-bottom: 15px; /* Adds space between quantity input and Send Inquiry button */
+    margin: 15px; /* Adds space between quantity input and Send Inquiry button */
 }
 
 .action-button {
-    margin-top: 10px; /* Adds space above Send Inquiry button */
+    margin-top: 12px; /* Adds space above Send Inquiry button */
     padding: 10px 15px;
     background-color: #007bff;
     color: white;
