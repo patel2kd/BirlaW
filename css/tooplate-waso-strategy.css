@@ -22,7 +22,7 @@ Free Bootstrap 5 HTML Template
 
   --body-font-family:             'DM Sans', sans-serif;
 
-  --h1-font-size:                 60px;
+  --h1-font-size:                 50px;
   --h2-font-size:                 42px;
   --h3-font-size:                 36px;
   --h4-font-size:                 32px;
@@ -92,6 +92,10 @@ h5 {
 }
 
 h6 {
+  font-size: var(--h6-font-size);
+}
+
+h7 {
   font-size: var(--h6-font-size);
 }
 
@@ -479,89 +483,47 @@ strong {
 
 /*---------------------------------------
   ABOUT              
+  
 -----------------------------------------*/
-.about-image-wrap {
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
+.about-thumb,
+.our-team {
+    border-radius: 20px; /* Smooth curved edges */
+    overflow: hidden;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-.about-image-info {
-  background: linear-gradient(to top, var(--dark-color), transparent 90%);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  padding: 30px;
-}
-
-.about-image {
-  border-radius: 20px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.about-thumb {
-  background: var(--primary-color);
-  border-radius: 20px;
-  margin-bottom: 24px;
-  padding:40px;
-}
-
+/* Make "Grow With Us" align next to About */
 .grow-with-us {
-  flex: 1; /* Takes up 1 part of the container width */
-  padding: 20px;
-  background-color: #111111; /* Matches your "Join us" section background */
-  color: #ffffff; /* Makes text readable */
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centers text inside the section */
-}
-/*---------------------------------------
-  SERVICES              
------------------------------------------
-.services {
-  background: var(--section-bg-color);
+    display:block;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
 }
 
-.nav-tabs {
-  border-bottom: 0;
+/* Fix "Our Team" section layout */
+.our-team {
+    text-align: center;
+    padding: 30px;
 }
 
-.nav-tabs .nav-link,
-.nav-tabs .nav-link span {
-  color: var(--p-color);
-  display: block;
-  text-align: left;
+/* Fix team member spacing */
+.team-member {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
 }
 
-.nav-tabs .nav-link {
-  border-radius: 0;
-  border: 0;
-  border-left: 7px solid var(--p-color);
-  margin-right: 30px;
-  margin-left: 30px;
-  margin-bottom: 30px;
-  padding: 30px;
-  transition: all 0.3s ease-in-out;
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #f8f9fa;
 }
-
-.nav-tabs .nav-item.show .nav-link, 
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-link:focus, 
-.nav-tabs .nav-link:hover {
-  border-left-color: var(--secondary-color);
-  background: var(--white-color);
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-}
-
-.nav-tabs .nav-link.active h3,
-.nav-tabs .nav-link:focus h3, 
-.nav-tabs .nav-link:hover h3 {
-  color: var(--primary-color);
-}*/
-
 
 /*---------------------------------------
   PROJECTS              

@@ -95,6 +95,17 @@
       text-align: center;
     }
   }
+
+  @media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grow-with-us {
+        width: 100%;
+    }
+}
   
   @media screen and (max-width: 480px) {
     h1 {
